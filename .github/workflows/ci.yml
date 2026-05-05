@@ -25,6 +25,7 @@ jobs:
 
       - name: Entrenar modelo
         run: |
+          rm -rf mlruns
           mkdir -p mlruns
           python src/train.py
 
