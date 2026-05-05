@@ -6,13 +6,26 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 
-# 🔧 asegurar carpeta local
-os.makedirs("mlruns", exist_ok=True)
+# 🔧 rutas seguras
+tracking_path = os.path.abspath("mlruns")
+tracking_uri = f"file://{tracking_path}"
 
-# 🔧 usar ruta absoluta del entorno (IMPORTANTE en CI)
-mlflow.set_tracking_uri("file://" + os.path.abspath("mlruns"))
+# crear carpeta
+os.makedirs(tracking_path, exist_ok=True)
 
-mlflow.set_experiment("ci-cd-mlflow-local")
+# configurar MLflow
+mlflow.set_tracking_uri(tracking_uri)
+
+# 🔥 definir experimento correctamente
+experiment_name = "ci-cd-mlflow-local"
+
+if not mlflow.get_experiment_by_name(experiment_name):
+    mlflow.create_experiment(
+        experiment_name,
+        artifact_location=tracking_uri  # 👈 CLAVE
+    )
+
+mlflow.set_experiment(experiment_name)
 
 # Datos
 X, y = load_diabetes(return_X_y=True)
@@ -34,6 +47,6 @@ mse = mean_squared_error(y_test, predictions)
 # Registro
 with mlflow.start_run():
     mlflow.log_metric("mse", mse)
-    mlflow.sklearn.log_model(model, name="model")  # 👈 también corregido
+    mlflow.sklearn.log_model(model, name="model")
 
 print(f"✅ MSE: {mse:.4f}")
