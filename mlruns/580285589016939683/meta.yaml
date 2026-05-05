@@ -1,0 +1,8 @@
+artifact_location: /Users/sergiodavidmirandabautista/Guia_CI_CD/mlruns/580285589016939683
+creation_time: 1777947291379
+experiment_id: '580285589016939683'
+last_update_time: 1777947291379
+lifecycle_stage: active
+name: ci-cd-mlflow-local
+trace_location: null
+workspace: default

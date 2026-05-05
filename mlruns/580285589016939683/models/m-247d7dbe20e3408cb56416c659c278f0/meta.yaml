@@ -1,0 +1,10 @@
+artifact_location: /Users/sergiodavidmirandabautista/Guia_CI_CD/mlruns/580285589016939683/models/m-247d7dbe20e3408cb56416c659c278f0/artifacts
+creation_timestamp: 1777947291453
+experiment_id: '580285589016939683'
+last_updated_timestamp: 1777947292773
+model_id: m-247d7dbe20e3408cb56416c659c278f0
+model_type: null
+name: model
+source_run_id: dc3cf4010078455b8de012486334f62f
+status: 2
+status_message: null

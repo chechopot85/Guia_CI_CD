@@ -1,0 +1,14 @@
+artifact_uri: /Users/sergiodavidmirandabautista/Guia_CI_CD/mlruns/580285589016939683/77098f7055c648ffaa3429fc1fe63d95/artifacts
+end_time: 1777947450363
+entry_point_name: ''
+experiment_id: '580285589016939683'
+lifecycle_stage: active
+run_id: 77098f7055c648ffaa3429fc1fe63d95
+run_name: righteous-tern-114
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777947449074
+status: 3
+tags: []
+user_id: sergiodavidmirandabautista
